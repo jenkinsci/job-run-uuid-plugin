@@ -1,0 +1,3 @@
+<div>
+  This plugin allows you to execute a build from the REST API and receive an associated UUID back. Useful for tracking multiple executions of the same job.
+</div>

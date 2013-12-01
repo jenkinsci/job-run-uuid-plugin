@@ -65,6 +65,8 @@ public class BuildIdExecutionAction implements Action
     	   		if(Jenkins.getInstance().getQueue().getItem(p) == null)
     	   		{
     	   		    BuildIdCause cause = new BuildIdCause();
+    	   		    if(params.getUUID() == null) { params.setUUID(cause.getUuid()); }
+    	   		    
 		    	   	Jenkins.getInstance().getQueue().schedule(p, 0, new ParametersAction(params.getParameters()), new CauseAction(cause));
 		    	   	brf.setBuild(UniqueRunUtils.findBuildForCause(params, cause, job));
 		            brf.setCause(cause);

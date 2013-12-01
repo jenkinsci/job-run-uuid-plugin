@@ -31,7 +31,7 @@ public class TestBuildIdCause
         assertNotEquals(build, build3);
         
         // Equals is based on there being the same type of cause
-        Cause cause = new Cause.UserIdCause();
+        Cause cause = new Cause.RemoteCause("localhost", "Executed as a unit test");
         assertNotEquals(cause, build3);
     }
     
